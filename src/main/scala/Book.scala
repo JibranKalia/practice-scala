@@ -1,9 +1,8 @@
-  case class Book(title: String, authors: String*)
+case class Book(title: String, authors: String*)
 
-
-  object BookForCompletion {
-    def defineBooks(): List[Book] = {
-      return List(
+object BookForCompletion {
+  def defineBooks(): List[Book] = {
+    return List(
       Book("To Kill a Mockingbird", "Harper Lee"),
       Book("1984", "George Orwell"),
       Book("Pride and Prejudice", "Jane Austen"),
@@ -80,7 +79,7 @@
       b1 <- books
       b2 <- books
       if b1 != b2
-    }
+    } yield b1
   }
 }
 
@@ -114,7 +113,7 @@
  * })
  *
  *
- * for loops that don't return anything and instead have a sideeffect are simpler. 
+ * for loops that don't return anything and instead have a sideeffect are simpler.
  *
  * The can use a foreach instead of a map
  */

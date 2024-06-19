@@ -4,11 +4,9 @@ object PersonDetails {
 
   def describePerson(person: Person): String = person match {
     case Person(_, n) if n > 30 => "This person is old"
-    case Person("John", _) => "This person is named John"
+    case Person("John", _)      => "This person is named John"
     case Person(_, n) if n < 30 => "This person is young"
-    case Person(name, age) => s"This person is $name old and with $name as a name"
-
-
+    case Person(name, age)      => s"This person is $name old and with $name as a name"
   }
 
   def main(args: Array[String]): Unit = {

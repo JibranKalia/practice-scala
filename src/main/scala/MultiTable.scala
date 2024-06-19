@@ -1,6 +1,6 @@
 object MultiTable {
   def makeRowSeq(row: Int) = {
-    for (col <- 1 to 10 ) yield {
+    for (col <- 1 to 10) yield {
       val product = (col * row).toString
       val padding = " " * (4 - product.length)
       padding + product

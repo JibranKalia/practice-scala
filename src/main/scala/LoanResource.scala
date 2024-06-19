@@ -34,9 +34,8 @@ object LoanResource {
   }
 
   def main(args: Array[String]): Unit = {
-    doEachLine("example.txt") {
-      line => line.toUpperCase()
+    doEachLine("example.txt") { line =>
+      line.toUpperCase()
     }
   }
 }
-

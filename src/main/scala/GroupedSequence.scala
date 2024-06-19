@@ -9,12 +9,11 @@ object GroupedSequence {
       group.map(number => number * 2)
     })
     println(doubled)
-    val doubledFlat = someNumbersGrouped.flatMap{ group =>
+    val doubledFlat = someNumbersGrouped.flatMap { group =>
       group.map(number => number * 2)
     }
 
     println(doubledFlat)
-
 
     val maybeNumber = Some(1)
     val maybeDoubled = maybeNumber.map(n => n * 2)
@@ -23,7 +22,6 @@ object GroupedSequence {
     val notNumber: Option[Int] = None
     val noneDoubled = notNumber.map(n => n * 2)
     println(noneDoubled)
-
 
     val maybeServerConfig: Option[ServerConfig] = Some(ServerConfig(Some(DatabaseConfig(Some(30)))))
     // Double timeout safely

@@ -5,9 +5,9 @@ object LastElement {
     println(ls)
 
     ls match {
-      case h :: Nil => h
+      case h :: Nil  => h
       case _ :: tail => lastRecursive(tail)
-      case _ => throw new NoSuchElementException()
+      case _         => throw new NoSuchElementException()
     }
   }
 

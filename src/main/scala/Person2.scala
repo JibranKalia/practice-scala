@@ -12,11 +12,9 @@ object PersonForCompletion {
     val persons = definePersons;
 
     val children1 = persons.filter(p => !p.isMale).flatMap(p => p.children.map(c => (p.name, c.name)))
-
     println(children1)
 
-    val children2 = for(p <- persons; if !p.isMale; c <- p.children) yield (p.name, c.name)
-
+    val children2 = for (p <- persons; if !p.isMale; c <- p.children) yield (p.name, c.name)
     println(children2)
 
     val children3 = for {
@@ -24,8 +22,6 @@ object PersonForCompletion {
       if !p.isMale
       c <- p.children
     } yield (p.name, c.name)
-
     println(children3)
-
   }
 }
