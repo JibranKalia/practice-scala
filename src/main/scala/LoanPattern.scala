@@ -1,14 +1,14 @@
 import java.io._
 
 object LoanPattern {
-  private def withFileWriter(name: String)(doWrite: BufferedWriter => Unit): Unit = {
+  private def withFileWriter[T](name: String)(doWrite: BufferedWriter => T): T = {
     val writer = new BufferedWriter(new FileWriter(name))
     try {
       doWrite(writer)
     } finally writer.close()
   }
 
-  private def withFileReader(name: String)(doRead: BufferedReader => String): String = {
+  private def withFileReader[T](name: String)(doRead: BufferedReader => T): T= {
     val reader = new BufferedReader(new FileReader(name))
     try {
       doRead(reader)
