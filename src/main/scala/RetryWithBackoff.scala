@@ -4,16 +4,18 @@ object RetryWithBackoff {
   def retry[T](max: Int, delay: Int)(f: => T): T = {
     var tries = 0
     var result: Option[T] = None
+    var currentDelay = delay
     while (result.isEmpty) {
       try {
         result = Some(f)
       } catch {
         case e: Throwable =>
+          Thread.sleep(currentDelay)
+          currentDelay *= 2
           tries += 1
           if (tries > max) throw e
           else {
             println(s"failed, retry #$tries")
-            Thread.sleep(delay)
           }
       }
     }
